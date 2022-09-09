@@ -4,19 +4,17 @@ import Home from './pages/Home'
 import './App.css'
 
 function App() {
-  const [libraries, setLibraries] = useState([]);
+  const [libs, setLibs] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:8000/libraries')
       .then(res => res.json())
-      .then(libraries => setLibraries(libraries));
-  })
-
-
+      .then(libs => setLibs(libs));
+  }, [])
 
   return (
     <Routes>
-      <Route path='/' element={<Home libraries={libraries}/>}/>
+      <Route path='/' element={<Home libs={libs}/>}/>
     </Routes>
   );
 }

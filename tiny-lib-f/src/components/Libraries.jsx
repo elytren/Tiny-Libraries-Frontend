@@ -1,12 +1,12 @@
 import React from 'react'
 import Library from './Library';
 
-const Libraries = ({libraries}) => {
+const Libraries = ({libs}) => {
   return (
     <>
-        {libraries.map((library) => {
+        {libs.map((lib) => {
             return(
-                <Library library={library}/>
+                <Library lib={lib}/>
                 );
             }
         )}

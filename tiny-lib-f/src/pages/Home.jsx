@@ -1,12 +1,14 @@
 import Libraries from "../components/Libraries";
+import Map from '../components/Map'
 
 import React from 'react'
 
-const Home = ({libraries}) => {
+const Home = ({libs}) => {
   return (
-    <div>
-        <Libraries libraries={libraries} />
-    </div>
+    <>
+    <Libraries libs={libs}/>
+    <Map />
+    </>
   )
 }
 

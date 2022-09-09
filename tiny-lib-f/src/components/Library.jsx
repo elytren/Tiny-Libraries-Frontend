@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Library = ({library}) => {
+const Library = ({lib}) => {
   return (
     <>
-        <h1>{library.id}</h1>
-        <h2>{library.title}</h2>
-        <h3>{library.genre}</h3>
-        <h3>{library.lat}</h3>
-        <h3>{library.lng}</h3>
+        <h1>{lib.id}</h1>
+        <h2>{lib.title}</h2>
+        <h3>{lib.genre}</h3>
+        <h3>{lib.lat}</h3>
+        <h3>{lib.lng}</h3>
     </>
   )
 }
