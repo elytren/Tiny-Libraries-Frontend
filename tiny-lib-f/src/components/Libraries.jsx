@@ -6,7 +6,7 @@ const Libraries = ({libs}) => {
     <>
         {libs.map((lib) => {
             return(
-                <Library lib={lib}/>
+                <Library key={lib.id} lib={lib}/>
                 );
             }
         )}

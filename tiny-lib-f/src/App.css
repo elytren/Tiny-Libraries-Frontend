@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.lib-marker {
+  background: none;
+  border: none;
+}
+
+.lib-marker img {
+  width: 25px;
+}

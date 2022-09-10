@@ -1,13 +1,13 @@
 import Libraries from "../components/Libraries";
-import Map from '../components/Map'
-
+import Map from '../components/Map';
+import MapTwo from '../components/MapTwo';
 import React from 'react'
 
 const Home = ({libs}) => {
   return (
     <>
     <Libraries libs={libs}/>
-    <Map />
+    <MapTwo />
     </>
   )
 }

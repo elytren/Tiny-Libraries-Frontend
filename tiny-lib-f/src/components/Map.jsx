@@ -2,6 +2,7 @@ import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps
 import { formatRelative } from 'date-fns'
 import mapStyles from '../mapStyles';
 import React, {useState, useCallback, useRef} from 'react'
+import useSwr from 'swr';
 
 import usePlacesAutocomplete , {
   getGeocode,
@@ -15,6 +16,8 @@ import {
   ComboboxOption,
 } from '@reach/combobox';
 import '@reach/combobox/styles.css'
+
+const url = 'http://localhost:8000/libraries/'
 
 
 
@@ -34,12 +37,16 @@ const options = {
   zoomControl: true
 }
 
+const fetcher = (...args) => fetch(...args).then(response => response.json());
 
 const Map = () => {
     
     const [markers, setMarkers] = useState([]);
     const [selected, setSelected] = useState(null);
 
+    const {data, error} = useSwr(url, fetcher);
+
+    const libs = data && !error ? data : [];
 
     const onMapClick = useCallback((event)=>{
       setMarkers(current => [...current, {
@@ -68,7 +75,7 @@ const Map = () => {
     if (loadError) return "Error loading maps";
     if (!isLoaded) return 'Loading Maps';
 
-    
+    const Marker = ({children}) => children;
 
   return (
     <div>
@@ -80,9 +87,10 @@ const Map = () => {
           zoom={8} 
           center={center} 
           options={options} 
-          onClick={onMapClick}
+          // onClick={onMapClick}
           onLoad={onMapLoad}
-        > {markers.map(marker => 
+        > 
+        {markers.map(marker => 
         <Marker 
           key={marker.time.toISOString()} 
           position={{ lat: marker.lat, lng:marker.lng}}
