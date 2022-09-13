@@ -1,13 +1,14 @@
 import Libraries from "../components/Libraries";
 import Map from '../components/Map';
-import MapTwo from '../components/MapTwo';
 import React from 'react'
+import AddLibrary from "../components/forms/AddLibrary";
 
-const Home = ({libs}) => {
+const Home = ({libs, addLib, updateLibState}) => {
   return (
     <>
     <Libraries libs={libs}/>
-    <MapTwo />
+    <Map updateLibState={updateLibState}/>
+    <AddLibrary libs={libs} addLib={addLib}/>
     </>
   )
 }
