@@ -1,7 +1,9 @@
-import {useState, useEffect} from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Home from './pages/Home'
-import './App.css'
+import {useState, useEffect} from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Map from './components/Map';
+import Layout from './components/layout/Layout';
+import './App.css';
 
 function App() {
   const [libs, setLibs] = useState([]);
@@ -19,10 +21,14 @@ function App() {
   const updateLibState = (id) => {
     setLibs(libs.filter((lib)=> lib.id !== id));
   }
+
   return (
+    <Layout>
     <Routes>
       <Route path='/' element={<Home libs={libs} updateLibState={updateLibState} addLib={addLib}/>}/>
+      <Route path='/adventure' element={<Map updateLibState={updateLibState} libs={libs} addLib={addLib}/>}/>
     </Routes>
+    </Layout>
   );
 }
 

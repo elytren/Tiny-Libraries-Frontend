@@ -23,7 +23,7 @@ const AddLibrary = ({ addLib }) => {
         .then((res)=>{
           setFormData(initialState);
           addLib(res.data);
-          navigate("/", {replace: true})
+          navigate("/adventure", {replace: true})
         })
   };
 
