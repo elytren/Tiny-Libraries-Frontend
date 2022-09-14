@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 
-const Marker = ({children}) => children
+
 
 const Library = ({lib, updateLibState}) => {
   const navigate = useNavigate();
@@ -14,9 +14,12 @@ const Library = ({lib, updateLibState}) => {
     .then((res)=>{
         console.log(res);
         updateLibState(id);
-        navigate("/", {replace: true})
+        navigate("/adventure", {replace: true})
     })
   }
+  // const address = `https://www.google.com/maps/dir/${lib.latitude},${lib.longitude}`
+  const address = `https://maps.google.com/?daddr=${lib.latitude},${lib.longitude}`
+
   function MyVerticallyCenteredModal(props) {
     return (
       <Modal
@@ -31,13 +34,15 @@ const Library = ({lib, updateLibState}) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>{lib.address}</h4>
+          <a 
+            href={address}
+          
+          >{lib.address}</a>
           <p>
             {lib.latitude}, {lib.longitude}
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
           <Button onClick={()=> deleteLib(lib.id)}>Delete</Button>
         </Modal.Footer>
       </Modal>
@@ -45,14 +50,13 @@ const Library = ({lib, updateLibState}) => {
   }
   return (
     <>
-        
       <button onClick={()=> setModalShow(true)} className='lib-marker'>
         <img src='/mark.png' alt='lib marker'/>
       </button>
 
       <MyVerticallyCenteredModal
-              show={modalShow}
-              onHide={() => setModalShow(false)}
+        show={modalShow}
+        onHide={() => setModalShow(false)}
       />
     </>
   )

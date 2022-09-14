@@ -19,7 +19,6 @@ const Libraries = ({libs, updateLibState}) => {
         defaultCenter={{lat: 45.523064, lng: -122.676483}}
         defaultZoom={10}
         options={options}
-      
       >
         {libs.map((lib) => {
             return(
@@ -35,8 +34,8 @@ const Libraries = ({libs, updateLibState}) => {
                 />
               </Marker>
               
-                );
-            }
+            );
+          }
         )}
       </GoogleMapReact>
     </>
