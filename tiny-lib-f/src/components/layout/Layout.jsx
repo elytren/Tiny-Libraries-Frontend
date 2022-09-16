@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from '../Navbar';
+import FTANavbar from '../Navbar';
 
 const Layout = ({children}) => {
   return (
     <div>
-        <Navbar />
+        <FTANavbar />
         {children}
     </div>
   )

@@ -51,7 +51,7 @@ const Library = ({lib, updateLibState}) => {
   return (
     <>
       <button onClick={()=> setModalShow(true)} className='lib-marker'>
-        <img src='/mark.png' alt='lib marker'/>
+        <img src='/home.png' alt='lib marker'/>
       </button>
 
       <MyVerticallyCenteredModal

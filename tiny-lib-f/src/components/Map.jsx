@@ -2,14 +2,23 @@ import React from 'react';
 import '@reach/combobox/styles.css'
 import AddLibrary from './forms/AddLibrary';
 import Libraries from './Libraries';
-
+import {Container, Row, Col} from 'react-bootstrap'
+ 
 
 const Map = ({updateLibState, libs, addLib}) => {
   return (
-    <div style={{ height: '50vh', width: '50vw'}}> 
-        <Libraries updateLibState={updateLibState} libs={libs}></Libraries>
-        <AddLibrary addLib={addLib}></AddLibrary>
-    </div>
+    <Container className='text-center'>
+        <Row>
+            <Col className='p-5' style={{ height: '75vh', width: '100vw'}}> 
+                <Libraries updateLibState={updateLibState} libs={libs}></Libraries>
+            </Col>
+        </Row>
+        <Row>
+            <Col>
+                <AddLibrary addLib={addLib}></AddLibrary>
+            </Col>
+        </Row>
+    </Container>
   )
 }
 
