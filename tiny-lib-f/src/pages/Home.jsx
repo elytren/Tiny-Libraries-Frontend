@@ -21,7 +21,7 @@ const Home = () => {
         </Row>
         <Row>
           <Col>
-            <a id='start' href='/adventure'><Button id='libbut' variant='outline-secondary'>Libraries Near You</Button></a>
+            <a id='start' href='https://freetradeadventures.netlify.app/adventure'><Button id='libbut' variant='outline-secondary'>Libraries Near You</Button></a>
           </Col>
         </Row>
       </Container>

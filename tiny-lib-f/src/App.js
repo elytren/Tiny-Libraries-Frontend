@@ -9,7 +9,7 @@ function App() {
   const [libs, setLibs] = useState([]);
 
   useEffect(() => {
-    fetch('http://fta.herokuapp.com/libraries/')
+    fetch('https://fta.herokuapp.com/libraries/')
       .then(res => res.json())
       .then(libs => setLibs(libs));
   }, [])
