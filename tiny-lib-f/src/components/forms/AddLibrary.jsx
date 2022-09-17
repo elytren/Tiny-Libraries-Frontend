@@ -26,7 +26,7 @@ const AddLibrary = ({ addLib }) => {
   };
  const handleSubmit = (e) => {
       e.preventDefault();
-      axios.post('http://localhost:8000/libraries/', formData)
+      axios.post('http://fta.herokuapp.com/libraries/', formData)
         .then((res)=>{
           setFormData(initialState);
           addLib(res.data);

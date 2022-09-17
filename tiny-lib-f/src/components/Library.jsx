@@ -10,14 +10,14 @@ const Library = ({lib, updateLibState}) => {
   const navigate = useNavigate();
   const [modalShow, setModalShow] = useState(null);
   const deleteLib = (id) => {
-    axios.delete(`http://localhost:8000/libraries/${id}`)
+    axios.delete(`https://fta.herokuapp.com/libraries/${id}`)
     .then((res)=>{
         console.log(res);
         updateLibState(id);
         navigate("/adventure", {replace: true})
     })
   }
-  // const address = `https://www.google.com/maps/dir/${lib.latitude},${lib.longitude}`
+  
   const address = `https://maps.google.com/?daddr=${lib.latitude},${lib.longitude}`
 
   function MyVerticallyCenteredModal(props) {
