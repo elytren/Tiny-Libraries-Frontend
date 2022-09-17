@@ -46,8 +46,13 @@ video {
   background-color: #f5f2f8;
 }
 
-#brandtitle, #homelink, #aboutlink, #startlink, #about, #libbut, #addlibbut, #new, #canceladd{
+#brandtitle, #homelink, #aboutlink, #contactlink, #startlink, #about, #libbut, #addlibbut, #new, #canceladd{
   color: #655174
+}
+
+#emaillogo {
+  width: 10vh;
+  height: 10vh
 }
 
 form {
@@ -59,4 +64,20 @@ form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
+}
+
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f5f2f8;
+  position: fixed;
+  bottom: 0;
+  color:#655174;
+  text-align: center;
+  font-size: 12px;
+  width: 100%;
+}
+
+#brandtitle, #abouttitle, #getstartedtitle, #contactustitle{
+  font-family: 'Secular One', sans-serif;
 }

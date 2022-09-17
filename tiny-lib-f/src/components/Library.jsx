@@ -24,7 +24,7 @@ const Library = ({lib, updateLibState}) => {
     return (
       <Modal
         {...props}
-        size="lg"
+        size="sm"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
@@ -34,16 +34,14 @@ const Library = ({lib, updateLibState}) => {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <a 
-            href={address}
+          <h3>
+            {lib.genre}
+          </h3>
+          <a href={address}>Directions</a>
           
-          >{lib.address}</a>
-          <p>
-            {lib.latitude}, {lib.longitude}
-          </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={()=> deleteLib(lib.id)}>Delete</Button>
+          <Button variant='outline-secondary' onClick={()=> deleteLib(lib.id)}>Delete</Button>
         </Modal.Footer>
       </Modal>
     );
